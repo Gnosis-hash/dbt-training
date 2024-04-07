@@ -6,3 +6,4 @@ select
     (amount/100.00) as amount,
     created 
 from {{ source('stripe', 'payment') }}
+order by 1
