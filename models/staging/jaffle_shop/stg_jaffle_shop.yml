@@ -17,5 +17,11 @@ models:
       - name: status
         tests:
           - accepted_values:
-              values: ['shipped', 'completed', 'return_pending', 'placed', 'returned']
-          
+              values: ['shipped', 'completed', 'return_pending', 'placed', 'returned']    
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: status      
